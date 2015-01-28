@@ -39,7 +39,7 @@ $ ./run -d1 -r10 -c25 example.com
 ### use bash
 
 ```console
-./run bash
+$ ./run bash
 ```
 
 fig
