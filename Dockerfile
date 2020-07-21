@@ -1,13 +1,13 @@
-FROM ubuntu:latest
-MAINTAINER Kazuya Yokogawa "yokogawa-k@klab.com"
+FROM ubuntu:20.04
+LABEL MANTAINER "Saul O. <@sortigoza>"
+LABEL REPO "https://github.com/sortigoza/docker-siege.git"
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update \
-    && apt-get --no-install-recommends -y install \
-    siege \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists 
+RUN apt update && \
+    apt --no-install-recommends -y install \
+        siege && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists
 
 ENTRYPOINT ["siege"]
 CMD ["--help"]
-
